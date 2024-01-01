@@ -1,0 +1,254 @@
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------- ESTILOS GLOBALES ---------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
+body{
+    background-color: #F5EEF8;
+}
+
+:root{ /*Para utilizar estas propiedades como variables*/
+    --oscuro: #07070A;
+    --azulOscuro: #0A1128;
+    --azulClaro: #006FE6;
+    --blanco: #FEFCFB;
+    --titulos: 'Baloo 2', cursive;
+    --parrafos: 'Montserrat', sant-serif;
+}
+
+html{
+    box-sizing: border-box; /*Para que el padding no afecte el tamaño de las cajas*/
+    font-size: 62.5%; /*Para que los rem sean multiplos de 10 y no 16*/
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+*, *::before, *::after{ /*Selector universal para todos los elementos*/
+    box-sizing: inherit; /*Para que tome los valores de su contenedor padre y el padding no afecte al tamaño de las cajas*/
+}
+
+h1, h2, h3{ /*Para los 3 tipos de titulos que voy a utilizar*/
+    font-family: var(--titulos);
+}
+
+p, a{ /*Para parrafos y enlaces*/
+    font-family: var(--parrafos);
+}
+
+.ocultar{ /*Creamos la propiedad para ocultar elementos*/
+    display: none;
+}
+
+.contenedor{
+    margin: 0 auto; /*El 0 es arriba y abajo y el auto es de izq a der*/
+    max-width: 120rem;
+    width: 95%;
+}
+
+.boton{
+    padding: 1rem 3rem;
+    font-weight: bold;
+    font-family: var(--parrafos);
+    font-size: 2rem;
+    border: none;
+    color: var(--blanco);
+}
+
+.boto:hover{
+    cursor: pointer;
+}
+
+.azul{
+    background-color: var(--azulClaro);
+}
+
+@keyframes desplazamiento { /*Animacion para suavizar el despliegue del menu hamburguesa*/
+    /*Desplazamiento inicial*/
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------- ENCABEZADO ------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
+.encabezado{
+    background-image: url('../img/colgante1.JPG');
+    background-repeat: no-repeat; /*Para que la imagen de fondo no se repita por defecto*/
+    height: 100vh; /*Ocupa el 100% de la pantalla*/
+    min-height: 60rem;
+    background-size: cover; /*Adapta la imagen de fondo a su contenedor padre*/
+    background-position: center; /*Centramos la imagen*/
+    position: relative; /*Tengo que ponerle asi apra que el hijo (.encabezado::before) pueda usar el absolute*/
+    z-index: 1; /*De esta manera lo identificamos y que no se opaque en el pseudoelemento hijo (-1)*/
+}
+
+.encabezado::before{ /*Pseudoelemento que usaremos para opacar la imagen de fondo*/
+    content: '';
+    position: absolute;
+    top: 0; /*Todos en cero hace referencia a las esquinas*/
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+}
+
+.logo h2{
+    font-size: 3rem;
+}
+
+.logo h2 span{
+    color: var(--azulClaro); /*Para que el logo de la pagina se vea mitad y mitad en colores*/
+}
+
+.contenido-navegacion{ /*Contenido desplegable con enlaces*/
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--blanco);
+    box-shadow: 10px 10px 16px -6px rgba(0, 0, 0, 0.45);
+}
+
+.navegacion{
+    background-color: var(--blanco);
+    position: absolute;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    text-align: left;
+    animation: desplazamiento .5s ease-in-out; /*Despliegue suavizado tanto para arbrir el menu como para cerralo*/
+}
+
+@media(min-width: 768px) {
+    .ocultar{
+        display: inline;
+    }    
+}
+
+.navegacion a{ /*Las opciones del desplegable*/
+    display: block;
+    font-size: 2rem;
+    padding: 1.1rem;
+    color: var(--oscuro);
+    text-decoration: none;
+    transition: background-color .3s ease-in-out;
+}
+
+.navegacion a:hover{ /*Efecto para resaltar cuando le pasamos el mouse por arriba*/
+    /*background-color: var(--azulClaro);*/  
+    /*color: var(--blanco);*/
+    text-decoration: underline;
+}
+
+@media(min-width: 768px){ /*Cuando las pantallas son de este tamaño minimo, osea computadoras o tablets*/
+    .navegacion a{
+        display: inline; /*Las opciones del desplegable se ven en linea (no hamburguesa)*/
+    }
+    .navegacion{
+        position: relative; /*Para que se acomoden mejor, porque en absolut es como mas libre*/
+        top: unset; /*Para que este mas arriba correctamente*/
+        width: auto; /*Para que ocupe el espacio correcto automaticamente*/
+        background-color: unset;
+        animation: unset;
+    }
+}
+
+.hamburguesa span{ /*Menu hamburguesa*/
+    width: 5rem;
+    height: 1rem;
+    border: 3px solid white;
+    background-color: var(--oscuro);
+    display: block; /*Para que los span en hamburguesa queden uno debajo del otro y no como palitos*/
+}
+
+@media(min-width: 768px) { /*Cuando la pantalla es grande, no se tiene que ver la hamburguesa*/
+    .hamburguesa{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------- CONTENIDO DEL ENCABEZADO -----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
+@media(min-width: 768px) {
+    .contenido-encabezado{
+        display: flex;
+        align-items: center;
+        height: 85%;
+        justify-content: space-between; /*Pone un espacio entre los dos contenidos*/
+    }
+    .contenido-encabezado, .formulario-encabezado{
+        flex: 0 0 calc(50%-1rem); /*Le decimos que cada contenido ocupa el 50% de la pagina, pero que deje un espacio de 10px en medio*/
+    }
+}
+
+.texto-encabezado h1{
+    font-size: 3rem;
+    text-align: center;
+    color: var(--blanco);
+    padding-top: 8rem;
+}
+
+@media(min-width: 768px) {
+    .texto-encabezado h1{
+        font-size: 7rem;
+        text-align: left;
+        padding-top: 0;
+    }
+}
+
+.formulario-encabezado{
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+    border-radius: .5rem;
+}
+
+.formulario-encabezado h2{
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 0;
+}
+
+@media(min-width: 768px) {
+      .formulario-encabezado h2{
+        font-size: 3rem;
+      }  
+}
+
+.input-encabezado{
+    margin-bottom: 1rem;
+    width: 100%; /*Para que use todo el espacio disponible*/
+}
+
+.input-encabezado input{
+    width: 100%;
+    padding: 0 1.6rem;
+    height: 4.8rem;
+    border: 1px solid #F1F1F1;
+    border-radius: .5rem;
+    font-family: var(--parrafos);
+    outline: none;
+}
