@@ -1,60 +1,53 @@
-<!DOCTYPE html>
-<!--Para trabajar con la ultima version de html (5, al momento)-->
-<html lang="es"> <!--En que idioma se escribe esta pagina-->
+<!DOCTYPE html> <!--Para trabajar con la ultima version de html (5, al momento)-->
+
+<html lang="en"> <!--En que idioma se escribe esta pagina-->
 
     <head> <!--Engloba todos los metadatos-->
-        <meta charset="UTF-8">
-        <!--Codifica caracteres especiales al lenguaje humano (por ejemplo los tildes)-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--Para que la pagina sea responsive a la pantalla del dispositivo y zoom inicial-->
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!--Para que la pagina sea compatible con navegadores viejos-->
-        <title>Mariana Seib Studio</title>
-        <!--Titulo que aparece en la pestaña-->
+        <meta charset="UTF-8"> <!--Codifica caracteres especiales al lenguaje humano (por ejemplo los tildes)-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Para que la pagina sea responsive a la pantalla del dispositivo y zoom inicial-->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!--Para que la pagina sea compatible con navegadores viejos-->
+        <title>MS Studio</title> <!--Titulo que aparece en la pestaña-->
+        <link rel="shotcut icon" href="/img/icono.png"> <!--Icono de la pestaña-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400&family=Montserrat:ital,wght@0,700;1,400&display=swap">
-        <link rel="stylesheet" href="css/normalize.css">
-        <!--Normaliza a valores por defecto a los estilos para ver que si falla la pagina no sea por algun estilo nuestro-->
-        <link rel="stylesheet" href="css/estilos.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Quicksand&family=Raleway:wght@100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/normalize.css"> <!--Normaliza a valores por defecto a los estilos para ver que si falla la pagina no sea por algun estilo nuestro-->
+        <link rel="stylesheet" href="css/estilos.css"> <!--Importamos nuestra hoja de estilos-->
     </head>
 
-    <body>
-        <!--Engloba todo lo que interactua con el usuario (Lo que se ve en la pagina)-->
-        <header class="encabezado">
-            <div class="contenido-navegacion">
+    <body> <!--Engloba todo lo que interactua con el usuario (Lo que se ve en la pagina)-->
+        <header class="header">
+            <div class="content-navigation">
                 <div class="logo">
-                    <h2>Mariana Seib <span>Studio</span></h2>
+                    <h1>MarianSeib <span>Studio</span></h1>
                 </div>
-                <nav class="navegacion ocultar">
-                    <!--Utilizo la clase ocultar del css para hacer el menu hamburguesa-->
-                    <a href="#">Inicio</a>
-                    <a href="#">Nosotros</a>
-                    <a href="#">Servicios</a>
-                    <a href="#">Contacto</a>
+                <nav class="navigation hide"> <!--Utilizo la clase hide del css para hacer el menu hamburguesa-->
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
                 </nav>
-                <div class="hamburguesa">
+                <div class="hamburger">
                     <span></span><span></span><span></span>
                 </div>
             </div>
-            <div class="contenido-encabezado">
-                <div class="texto-encabezado">
-                    <h1>handmade modern fiber art</h1>
+            <div class="content-header container">
+                <div class="text-header">
+                    <h2>Handmade modern fiber art</h2>
                 </div>
-                <form class="formulario-encabezado">
-                    <h2>Consulta por trabajos a medida</h2>
-                    <div class="input-encabezado">
-                        <input type="text" placeholder="Nombre">
+                <form class="form-header">
+                    <h2>Ask about custom work</h2>
+                    <div class="input-header">
+                        <input type="text" placeholder="Name">
                     </div>
-                    <div class="input-encabezado">
-                        <input type="mail" placeholder="Correo">
+                    <div class="input-header">
+                        <input type="mail" placeholder="Email address">
                     </div>
-                    <div class="input-encabezado">
-                        <input type="tel" placeholder="Telefono">
+                    <div class="input-header">
+                        <input type="tel" placeholder="Phone Number">
                     </div>
-                    <div class="boton-encabezado">
-                        <input class="boton azul" type="submit" value="Enviar">
+                    <div class="btn-header">
+                        <input class="btn" type="submit" value="Send">
                     </div>
                 </form>
             </div>
