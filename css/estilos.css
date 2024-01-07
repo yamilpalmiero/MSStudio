@@ -10,10 +10,10 @@
     --rose: thistle;
     --white: #FEFCFB;
     /*Fuentes*/
-    --principal: 'Playfair Display', sant-serif;
-    --titles: 'Quicksand', cursive;
-    --paragraphs: 'Quicksand', sant-serif;
-    --links: 'Raleway', sant-serif;
+    --principal: 'Playfair Display', serif;
+    --titles: 'Montserrat', sans-serif;
+    --paragraphs: 'Quicksand', sans-serif;
+    --links: 'Raleway', sans-serif;
 }
 
 
@@ -72,7 +72,7 @@ a{ /*Para links*/
     padding: .5rem 1.5rem;
     margin-top: 1.5rem;
     font-weight: bold;
-    font-family: var(--principal);
+    font-family: var(--titles);
     font-size: 1.5rem;
     border: none;
     color: var(--gray);
@@ -126,7 +126,7 @@ a{ /*Para links*/
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.15);
     z-index: -1;
 }
 
@@ -143,14 +143,14 @@ a{ /*Para links*/
     align-items: center;
     justify-content: space-around;
     background-color: var(--white);
-    box-shadow: 10px 10px 16px -6px rgba(0, 0, 0, 0.45);
+    box-shadow: 10px 10px 16px -6px rgba(0, 0, 0, 0.35);
 }
 
 .navigation{
     background-color: var(--white);
     position: absolute;
     left: 0;
-    top: 70px;
+    top: 90px;
     width: 100%;
     text-align: left;
     animation: displacement .5s ease-in-out; /*Despliegue suavizado tanto para arbrir el menu como para cerralo*/
@@ -218,7 +218,7 @@ a{ /*Para links*/
     .content-header{
         display: flex; /*Para que el h2 y el formulario se posicionen uno al lado del otro*/
         align-items: center;
-        height: 85%;
+        height: 90%;
         justify-content: space-between; /*Pone un espacio entre los dos contenidos*/
     }
     .content-header, .form-header{
@@ -227,15 +227,16 @@ a{ /*Para links*/
 }
 
 .text-header h2{
-    font-size: 3rem;
+    font-size: 3.5rem;
     text-align: center;
     color: var(--white);
-    padding-top: 8rem;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
 }
 
 @media(min-width: 768px) {
     .text-header h2{
-        font-size: 7rem;
+        font-size: 8rem;
         text-align: left;
         padding-top: 0;
     }
@@ -251,7 +252,7 @@ a{ /*Para links*/
 }
 
 .form-header h2{
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: center;
     margin-top: 0;
 }
